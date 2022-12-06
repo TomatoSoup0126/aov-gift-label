@@ -6,15 +6,36 @@
           <img src="/assets/santa.svg" alt="" class="max-w-[12em]" />
           <div>
             <h1 class="font-serif text-4xl">Happy Holidays!</h1>
-            <div class="mt-4 bg-white text-black p-2 rounded">TO: John</div>
-            <div class="mt-2 bg-white text-black p-2 rounded">FROM: Joana</div>
+            <div class="mt-4 bg-white text-black p-2 rounded">{{ `TO: ${to}` }}</div>
+            <div class="mt-2 bg-white text-black p-2 rounded">{{ `FROM: ${from}` }}</div>
           </div>
         </div>
+      </div>
+      <div class="mt-6">
+        <label class="block">
+          To:
+          <input type="text"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"
+            v-model="to"
+          >
+        </label>
+      </div>
+      <div class="mt-6">
+        <label class="block">
+          From:
+          <input type="text"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2"
+            v-model="from"
+          >
+        </label>
+        
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-// ...
+import { ref } from 'vue'
+const to = ref('')
+const from = ref('')
 </script>
